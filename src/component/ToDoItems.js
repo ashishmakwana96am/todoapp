@@ -76,8 +76,8 @@ const ToDoItems = ({
                 onChange={handleCheckboxClick}
               />
             </div>
-            <h3
-              className={`font-bold ${completed && "line-through"} flex gap-3`}
+            <h3 onClick={handleOpen}
+              className={`font-bold ${completed && "line-through"} flex gap-3 cursor-pointer`}
             >
               {title}
             </h3>
@@ -92,7 +92,7 @@ const ToDoItems = ({
           </button>
         </div>
         <div>
-        <p onClick={handleOpen} className="cursor-pointer mb-3">{description.length > 100 ? `${description.slice(0, 100)}...` : description}</p>
+        <p  className=" mb-3">{description.length > 100 ? `${description.slice(0, 100)}...` : description}</p>
 
           <p className={` ${completed ? "text-white" : "text-gray-500"}`}> {formattedCreatedAt}</p>
         </div>
