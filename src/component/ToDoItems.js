@@ -78,8 +78,7 @@ const ToDoItems = ({
             </div>
             <h3 onClick={handleOpen}
               className={`text-lg capitalize font-bold ${completed && "line-through"} flex gap-3 cursor-pointer`}
-            >
-              {title}
+            > {title.length > 100 ? `${title.slice(0, 105)}...` : title}
             </h3>
           </div>
           <button
@@ -93,7 +92,6 @@ const ToDoItems = ({
         </div>
         <div>
         <p  className=" mb-3">{description.length > 100 ? `${description.slice(0, 100)}...` : description}</p>
-
           <p className={` ${completed ? "text-white" : "text-gray-500"}`}> {formattedCreatedAt}</p>
         </div>
       </div>
