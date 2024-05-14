@@ -1,7 +1,48 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = JSON.parse(localStorage.getItem("todos")) || [];
+const defaultTodos = [
+  {
+    id: 1,
+    title: "Default Todo 4",
+    description: "This is the first default todo",
+    completed: true,
+    priority: "High",
+    createdAt: 'Tuesday, May 14, 2024 at 10:00 AM'
+  },
+  {
+    id: 2,
+    title: "Default Todo 3",
+    description: "This is the second default todo",
+    completed: false,
+    priority: "Urgent",
+    createdAt: 'Tuesday, May 14, 2024 at 10:00 AM'
+  },
+  {
+    id: 3,
+    title: "Default Todo 2",
+    description: "This is the third default todo",
+    completed: false,
+    priority: "Normal",
+    createdAt: 'Tuesday, May 14, 2024 at 10:00 AM'
+  },
+  {
+    id: 4,
+    title: "Default Todo 1",
+    description: "This is the fourth default todo",
+    completed: false,
+    priority: "Low",
+    createdAt: 'Tuesday, May 14, 2024 at 10:00 AM'
+  }
+];
 
+let storedTodos = JSON.parse(localStorage.getItem("todos"));
+
+if (!storedTodos || !Array.isArray(storedTodos) || storedTodos.length === 0) {
+  storedTodos = defaultTodos;
+  localStorage.setItem("todos", JSON.stringify(storedTodos));
+}
+
+const initialState = storedTodos;
 
 export const todoSlice = createSlice({
   name: "todos",
@@ -38,6 +79,6 @@ export const todoSlice = createSlice({
   },
 });
 
-export const { addTodo, toggleComplete, deleteTodo,filterByPriority } = todoSlice.actions;
+export const { addTodo, toggleComplete, deleteTodo, filterByPriority } = todoSlice.actions;
 
 export default todoSlice.reducer;

@@ -50,7 +50,7 @@ const AddToDo = ({setOpen ,open}) => {
       {open && (
         <>
           <div className="fixed inset-0 bg-[#3B2B83] opacity-50 z-50 "></div>
-          <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[999] overflow-x-hidden overflow-y-scroll lg:overflow-y-auto max-h-[90%] lg:max-h-auto w-[90%] sm:w-auto">
+          <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[999] overflow-x-hidden overflow-y-scroll lg:overflow-y-auto max-h-[90%] lg:max-h-auto w-[90%] sm:w-[80%] xl:w-[60%] ">
             <div className="bg-white rounded-lg shadow-lg grid grid-cols-12">
               <div className="col-span-12 lg:col-span-6">
                 <img

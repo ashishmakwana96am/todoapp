@@ -43,19 +43,19 @@ const ToDoItems = ({
   return (
    <>
      <li
-      className={`mt-6 border rounded-md p-4 my-4 transition-all duration-500 ${
-        completed ? "bg-[#3B2B83] text-white" : "bg-white"
+      className={`mt-6 border rounded-md p-4 my-4 transition-all duration-500 shadow-lg ${
+        completed ? "bg-[#3B2B83] text-white" : "bg-[#F4F2FF]"
       } hover:scale-[1.03]`}
     >
       <div className="ps-11" >
         <button
           className={`text-xs px-3 mb-3 py-1 rounded-md font-semibold ${
             priority === "High"
-              ? "text-[#fff1e3] bg-[#f59a45]"
+              ? "text-[#fff1e3] bg-[#ECB800]"
               : priority === "Urgent"
-              ? "text-white bg-[#ea5455]"
+              ? "text-white bg-[#E42C5F]"
               : priority === "Normal"
-              ? "text-white bg-blue-600"
+              ? "text-white bg-[#2D41A7]"
               : priority === "Low"
               ? "bg-[#28c76f] text-white"
               : "text-white bg-gray-600"
@@ -66,7 +66,7 @@ const ToDoItems = ({
         <div className="flex items-center justify-between mb-2 ">
           <div className="flex items-start">
             <div className="relative cursor-pointer">
-              <span className="absolute top-1 -left-10 w-5 h-5 border border-solid border-gray-500 rounded-md flex items-center justify-center mr-3" onClick={handleCheckboxClick}>
+              <span className={` absolute top-1 -left-10 w-5 h-5 border border-solid border-gray-500 rounded-md flex items-center justify-center mr-3 ${completed ? "bg-[#5D5FEF]" : ""}`} onClick={handleCheckboxClick}>
                 {completed && <RiCheckLine className=" text-xl " />}
               </span>
               <input
@@ -77,7 +77,7 @@ const ToDoItems = ({
               />
             </div>
             <h3 onClick={handleOpen}
-              className={`font-bold ${completed && "line-through"} flex gap-3 cursor-pointer`}
+              className={`text-lg capitalize font-bold ${completed && "line-through"} flex gap-3 cursor-pointer`}
             >
               {title}
             </h3>
@@ -100,8 +100,8 @@ const ToDoItems = ({
     </li>
   {popup && (
 <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-30 z-50 ">
-<div className="p-2 sm:p-10">
-    <div className="bg-white rounded-md max-w-[900px]  p-5 h-[600px] overflow-y-scroll mx-10" >
+<div className="w-[90%] sm:w-[80%] xl:w-[60%]">
+    <div className="bg-white rounded-md w-full p-5 h-[600px] overflow-y-scroll" >
     <div className="flex justify-end ">  
       <button
         onClick={handleClose}
