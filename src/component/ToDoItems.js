@@ -51,7 +51,7 @@ const ToDoItems = ({
         <button
           className={`text-xs px-3 mb-3 py-1 rounded-md font-semibold ${
             priority === "High"
-              ? "text-[#fff1e3] bg-[#ECB800]"
+              ? "text-[#fff1e3] bg-[#ecb900c8]"
               : priority === "Urgent"
               ? "text-white bg-[#E42C5F]"
               : priority === "Normal"
@@ -77,7 +77,7 @@ const ToDoItems = ({
               />
             </div>
             <h3 onClick={handleOpen}
-              className={`text-lg capitalize font-bold ${completed && "line-through"} flex gap-3 cursor-pointer`}
+              className={`text-lg capitalize font-bold  ${completed ? "line-through text-white" : "text-[#3B2B83]"} flex gap-3 cursor-pointer`}
             > {title.length > 100 ? `${title.slice(0, 105)}...` : title}
             </h3>
           </div>
