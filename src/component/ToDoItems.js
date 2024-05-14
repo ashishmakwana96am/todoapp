@@ -51,7 +51,7 @@ const ToDoItems = ({
         <button
           className={`text-xs px-3 mb-3 py-1 rounded-md font-semibold ${
             priority === "High"
-              ? "text-[#fff1e3] bg-[#ecb900c8]"
+              ? "text-[#fff1e3] bg-[#ecb900e1]"
               : priority === "Urgent"
               ? "text-white bg-[#E42C5F]"
               : priority === "Normal"
