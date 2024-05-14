@@ -40,7 +40,7 @@ const ToDoList = () => {
               id="priorityFilter"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="text-[#3B2B83] text-xl bg-[#D5CCFF] border border-gray-400 px-3 sm:px-8 py-1 rounded-md focus:outline-none focus:border-[#3B2B83]  transition-all duration-500 hover:scale-[1.03] font-semibold"
+              className="text-[#3B2B83] text-xl bg-[#D5CCFF] border border-gray-400 px-3 sm:px-8 py-1 rounded-md focus:outline-none focus:border-[#3B2B83]  transition-all duration-500 font-semibold"
             >
               <option value="all">All</option>
               <option value="Low">Low</option>
@@ -52,7 +52,7 @@ const ToDoList = () => {
         </button>
         <button
           onClick={handleOpen}
-          className="text-[#3B2B83] text-xl bg-[#D5CCFF] px-4 py-1 rounded-md  focus:outline-none focus:[#3B2B83] transition-all duration-500 hover:scale-[1.03] font-semibold border border-gray-400"
+          className="text-[#3B2B83] text-xl bg-[#D5CCFF] px-4 py-1 rounded-md  focus:outline-none focus:[#3B2B83] transition-all duration-500  font-semibold border border-gray-400"
         >
           Add To Do
         </button>
@@ -63,7 +63,7 @@ const ToDoList = () => {
       <ul className="bg-[#D5CCFF] p-5 rounded-lg mt-5">
       {filteredList.length === 0 ? (
         <p className={`mt-6 border rounded-md p-4 my-5 transition-all duration-500 bg-white
-      hover:scale-[1.03] text-center text-xl font-semibold flex justify-center items-center flex-col gap-3`}><img src="assets/download-_1_.png" className="py-4" alt=""/> <span className="text-[#3B2B83]">No records found!</span>
+       text-center text-xl font-semibold flex justify-center items-center flex-col gap-3`}><img src="assets/download-_1_.png" className="py-4" alt=""/> <span className="text-[#3B2B83]">No records found!</span>
     </p>
       ) : (
         <>

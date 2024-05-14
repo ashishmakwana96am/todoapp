@@ -45,7 +45,7 @@ const ToDoItems = ({
      <li
       className={`mt-6 border rounded-md p-4 my-4 transition-all duration-500 shadow-lg ${
         completed ? "bg-[#3B2B83] text-white" : "bg-[#F4F2FF]"
-      } hover:scale-[1.03]`}
+      } `}
     >
       <div className="ps-11" >
         <button
@@ -119,7 +119,7 @@ const ToDoItems = ({
       </ul>
       <ul className="">
         <li className="text-base flex gap-10 font-medium mb-2"> <span className="text-black ">{priority}</span></li>
-        <li className="text-base flex gap-10 font-medium mb-2"> <span className="text-black">{formattedCreatedAt}</span></li>
+        <li className="text-base flex gap-10 font-medium mb-2"> <span className="text-black">    {formattedCreatedAt ? formattedCreatedAt : createdAt}</span></li>
       </ul>
       </div>
       <div className="py-7">
