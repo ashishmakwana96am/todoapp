@@ -78,7 +78,7 @@ const ToDoItems = ({
             </div>
             <h3 onClick={handleOpen}
               className={`text-lg capitalize font-bold  ${completed ? "line-through text-white" : "text-[#3B2B83]"} flex gap-3 cursor-pointer`}
-            > {title.length > 100 ? `${title.slice(0, 105)}...` : title}
+            > {title.length > 100 ? `${title.slice(0, 100)}...` : title}
             </h3>
           </div>
           <button
@@ -97,9 +97,10 @@ const ToDoItems = ({
       </div>
     </li>
   {popup && (
-<div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-30 z-50 ">
-<div className="w-[90%] sm:w-[80%] xl:w-[60%]">
-    <div className="bg-white rounded-md w-full p-5 h-[600px] overflow-y-scroll" >
+    <div class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-30 z-50">
+  <div class="absolute top-0 left-0 w-full h-full flex justify-center items-center">
+    <div class="w-[90%] sm:w-[80%] xl:w-[60%]">
+      <div class="bg-white rounded-md w-full p-5 h-auto max-h-[70vh] overflow-y-auto">
     <div className="flex justify-end ">  
       <button
         onClick={handleClose}
@@ -116,7 +117,21 @@ const ToDoItems = ({
         <li className="text-base flex gap-10 font-medium mb-2"> <span  className="text-gray-600" >Date</span></li>
       </ul>
       <ul className="">
-        <li className="text-base flex gap-10 font-medium mb-2"> <span className="text-black ">{priority}</span></li>
+        <li className="text-base flex gap-10 font-medium mb-2"> <button
+          className={`text-xs px-3 py-1 rounded-md font-semibold ${
+            priority === "High"
+              ? "text-[#fff1e3] bg-[#ecb900e1]"
+              : priority === "Urgent"
+              ? "text-white bg-[#E42C5F]"
+              : priority === "Normal"
+              ? "text-white bg-[#2D41A7]"
+              : priority === "Low"
+              ? "bg-[#28c76f] text-white"
+              : "text-white bg-gray-600"
+          }`}
+        >
+          {priority}
+        </button></li>
         <li className="text-base flex gap-10 font-medium mb-2"> <span className="text-black">    {formattedCreatedAt ? formattedCreatedAt : createdAt}</span></li>
       </ul>
       </div>
@@ -126,6 +141,7 @@ const ToDoItems = ({
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>
 )}

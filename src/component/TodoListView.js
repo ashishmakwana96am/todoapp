@@ -40,7 +40,7 @@ const ToDoList = () => {
               id="priorityFilter"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="bg-[#3B2B83] text-white text-xl border border-gray-400px-4 py-2 sm:px-8 rounded-md focus:outline-none focus:border-[#3B2B83]  transition-all duration-500 font-semibold "
+              className="bg-[#3B2B83] text-white text-xl border border-gray-400px-4 py-2 px-3 sm:px-8 rounded-md focus:outline-none focus:border-[#3B2B83]  transition-all duration-500 font-semibold "
             >" 
               <option value="all">All</option>
               <option value="Low">Low</option>
@@ -52,7 +52,7 @@ const ToDoList = () => {
         </button>
         <button
           onClick={handleOpen}
-          className="bg-[#3B2B83] text-white text-xl border border-gray-400px-4 py-2 sm:px-8 rounded-md focus:outline-none focus:border-[#3B2B83]  transition-all duration-500 font-semibold "
+          className="bg-[#3B2B83] text-white text-xl border border-gray-400px-4 py-2 px-3 sm:px-8 rounded-md focus:outline-none focus:border-[#3B2B83]  transition-all duration-500 font-semibold "
         >
           Add To Do
         </button>
